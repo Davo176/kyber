@@ -33,6 +33,33 @@ all: \
   test_vectors768-90s \
   test_vectors1024-90s
 
+addRand2: $(SOURCESKECCAK) $(HEADERSKECCAK) addRand.c rng.c rng.h
+	$(CC) $(NISTFLAGS) -DKYBER_K=2 -o $@ $(SOURCESKECCAK) rng.c addRand.c $(LDFLAGS) -lcrypto
+
+addRand3: $(SOURCESKECCAK) $(HEADERSKECCAK) addRand.c rng.c rng.h
+	$(CC) $(NISTFLAGS) -DKYBER_K=3 -o $@ $(SOURCESKECCAK) rng.c addRand.c $(LDFLAGS) -lcrypto
+
+addRand4: $(SOURCESKECCAK) $(HEADERSKECCAK) addRand.c rng.c rng.h
+	$(CC) $(NISTFLAGS) -DKYBER_K=4 -o $@ $(SOURCESKECCAK) rng.c addRand.c $(LDFLAGS) -lcrypto
+
+addEncap2: $(SOURCESKECCAK) $(HEADERSKECCAK) addEncap.c rng.c rng.h
+	$(CC) $(NISTFLAGS) -DKYBER_K=2 -o $@ $(SOURCESKECCAK) rng.c addEncap.c $(LDFLAGS) -lcrypto
+
+addEncap3: $(SOURCESKECCAK) $(HEADERSKECCAK) addEncap.c rng.c rng.h
+	$(CC) $(NISTFLAGS) -DKYBER_K=3 -o $@ $(SOURCESKECCAK) rng.c addEncap.c $(LDFLAGS) -lcrypto
+
+addEncap4: $(SOURCESKECCAK) $(HEADERSKECCAK) addEncap.c rng.c rng.h
+	$(CC) $(NISTFLAGS) -DKYBER_K=4 -o $@ $(SOURCESKECCAK) rng.c addEncap.c $(LDFLAGS) -lcrypto
+
+addDecap2: $(SOURCESKECCAK) $(HEADERSKECCAK) addDecap.c rng.c rng.h
+	$(CC) $(NISTFLAGS) -DKYBER_K=2 -o $@ $(SOURCESKECCAK) rng.c addDecap.c $(LDFLAGS) -lcrypto
+
+addDecap3: $(SOURCESKECCAK) $(HEADERSKECCAK) addDecap.c rng.c rng.h
+	$(CC) $(NISTFLAGS) -DKYBER_K=3 -o $@ $(SOURCESKECCAK) rng.c addDecap.c $(LDFLAGS) -lcrypto
+
+addDecap4: $(SOURCESKECCAK) $(HEADERSKECCAK) addDecap.c rng.c rng.h
+	$(CC) $(NISTFLAGS) -DKYBER_K=4 -o $@ $(SOURCESKECCAK) rng.c addDecap.c $(LDFLAGS) -lcrypto
+
 speed: \
   test_speed512 \
   test_speed768 \
