@@ -60,6 +60,33 @@ addDecap3: $(SOURCESKECCAK) $(HEADERSKECCAK) addDecap.c rng.c rng.h
 addDecap4: $(SOURCESKECCAK) $(HEADERSKECCAK) addDecap.c rng.c rng.h
 	$(CC) $(NISTFLAGS) -DKYBER_K=4 -o $@ $(SOURCESKECCAK) rng.c addDecap.c $(LDFLAGS) -lcrypto
 
+createKeyPairs2: $(SOURCESKECCAK) $(HEADERSKECCAK) createKeyPairs.c rng.c rng.h
+	$(CC) $(NISTFLAGS) -DKYBER_K=2 -o $@ $(SOURCESKECCAK) rng.c createKeyPairs.c $(LDFLAGS) -lcrypto
+
+createKeyPairs3: $(SOURCESKECCAK) $(HEADERSKECCAK) createKeyPairs.c rng.c rng.h
+	$(CC) $(NISTFLAGS) -DKYBER_K=3 -o $@ $(SOURCESKECCAK) rng.c createKeyPairs.c $(LDFLAGS) -lcrypto
+
+createKeyPairs4: $(SOURCESKECCAK) $(HEADERSKECCAK) createKeyPairs.c rng.c rng.h
+	$(CC) $(NISTFLAGS) -DKYBER_K=4 -o $@ $(SOURCESKECCAK) rng.c createKeyPairs.c $(LDFLAGS) -lcrypto
+
+createEncaps2: $(SOURCESKECCAK) $(HEADERSKECCAK) createEncapsulation.c rng.c rng.h
+	$(CC) $(NISTFLAGS) -DKYBER_K=2 -o $@ $(SOURCESKECCAK) rng.c createEncapsulation.c $(LDFLAGS) -lcrypto
+
+createEncaps3: $(SOURCESKECCAK) $(HEADERSKECCAK) createEncapsulation.c rng.c rng.h
+	$(CC) $(NISTFLAGS) -DKYBER_K=3 -o $@ $(SOURCESKECCAK) rng.c createEncapsulation.c $(LDFLAGS) -lcrypto
+
+createEncaps4: $(SOURCESKECCAK) $(HEADERSKECCAK) createEncapsulation.c rng.c rng.h
+	$(CC) $(NISTFLAGS) -DKYBER_K=4 -o $@ $(SOURCESKECCAK) rng.c createEncapsulation.c $(LDFLAGS) -lcrypto
+
+createDecaps2: $(SOURCESKECCAK) $(HEADERSKECCAK) createDecapsulation.c rng.c rng.h
+	$(CC) $(NISTFLAGS) -DKYBER_K=2 -o $@ $(SOURCESKECCAK) rng.c createDecapsulation.c $(LDFLAGS) -lcrypto -g
+
+createDecaps3: $(SOURCESKECCAK) $(HEADERSKECCAK) createDecapsulation.c rng.c rng.h
+	$(CC) $(NISTFLAGS) -DKYBER_K=3 -o $@ $(SOURCESKECCAK) rng.c createDecapsulation.c $(LDFLAGS) -lcrypto -g
+
+createDecaps4: $(SOURCESKECCAK) $(HEADERSKECCAK) createDecapsulation.c rng.c rng.h
+	$(CC) $(NISTFLAGS) -DKYBER_K=4 -o $@ $(SOURCESKECCAK) rng.c createDecapsulation.c $(LDFLAGS) -lcrypto -g
+
 speed: \
   test_speed512 \
   test_speed768 \
