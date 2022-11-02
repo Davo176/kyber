@@ -1,6 +1,11 @@
 # Will Testing
 To generate all Additional Tests run:
 ./generateAll.sh
+To do interoperability testing you will have to manually change the code to swap between java and csharp
+after that you should be able to run:
+./createKeypairs.sh
+./createEncapsulated.sh
+./createDecapsulated.sh
 # Kyber
 
 [![Build Status](https://travis-ci.org/pq-crystals/kyber.svg?branch=master)](https://travis-ci.org/pq-crystals/kyber) [![Coverage Status](https://coveralls.io/repos/github/pq-crystals/kyber/badge.svg?branch=master)](https://coveralls.io/github/pq-crystals/kyber?branch=master)
